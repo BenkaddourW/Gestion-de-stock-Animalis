@@ -1,0 +1,212 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Mon Compte - Animalis";
+}
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Menu latéral -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-user-circle mr-2"></i>Mon compte</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                        <i class="fas fa-user mr-2"></i>Informations personnelles
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Adresses
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-shopping-bag mr-2"></i>Mes commandes
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-heart mr-2"></i>Mes favoris
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fas fa-lock mr-2"></i>Mot de passe
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action text-danger">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Déconnexion
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card Animal de compagnie -->
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-header bg-light">
+                    <h6 class="mb-0"><i class="fas fa-paw mr-2"></i>Mon animal</h6>
+                </div>
+                <div class="card-body text-center">
+                    <img src="https://via.placeholder.com/100?text=Photo+Chien" class="rounded-circle mb-3" width="100" height="100" alt="Photo animal">
+                    <h5>Max</h5>
+                    <p class="text-muted small">Golden Retriever - 3 ans</p>
+                    <button class="btn btn-sm btn-outline-primary">Modifier</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0"><i class="fas fa-user-edit mr-2"></i>Informations personnelles</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="firstName">Prénom</label>
+                                <input type="text" class="form-control" id="firstName" value="Jean">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lastName">Nom</label>
+                                <input type="text" class="form-control" id="lastName" value="Dupont">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse email</label>
+                            <input type="email" class="form-control" id="email" value="jean.dupont@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" class="form-control" id="phone" value="01 23 45 67 89">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthdate">Date de naissance</label>
+                            <input type="date" class="form-control" id="birthdate" value="1985-06-15">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save mr-2"></i>Enregistrer les modifications
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Dernières commandes -->
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0"><i class="fas fa-history mr-2"></i>Dernières commandes</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>N° Commande</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Statut</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#AN202300145</td>
+                                    <td>15/06/2023</td>
+                                    <td>89,98€</td>
+                                    <td><span class="badge badge-success">Livré</span></td>
+                                    <td class="text-right">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#AN202300087</td>
+                                    <td>02/05/2023</td>
+                                    <td>124,50€</td>
+                                    <td><span class="badge badge-success">Livré</span></td>
+                                    <td class="text-right">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#AN202300042</td>
+                                    <td>18/03/2023</td>
+                                    <td>56,75€</td>
+                                    <td><span class="badge badge-success">Livré</span></td>
+                                    <td class="text-right">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Détails</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer bg-white text-right">
+                    <a href="#" class="btn btn-primary">Voir toutes mes commandes</a>
+                </div>
+            </div>
+
+            <!-- Produits favoris -->
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0"><i class="fas fa-heart mr-2"></i>Mes produits favoris</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Produit favori 1 -->
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://via.placeholder.com/80?text=Jouet+Chien" class="rounded" width="80" height="80" alt="Produit">
+                                <div class="ml-3">
+                                    <h6 class="mb-1">Jouet interactif pour chien</h6>
+                                    <p class="mb-1 text-muted small">24,99€</p>
+                                    <div class="d-flex">
+                                        <button class="btn btn-sm btn-outline-primary mr-2">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Produit favori 2 -->
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://via.placeholder.com/80?text=Croquettes" class="rounded" width="80" height="80" alt="Produit">
+                                <div class="ml-3">
+                                    <h6 class="mb-1">Croquettes Premium Chat</h6>
+                                    <p class="mb-1 text-muted small">39,99€</p>
+                                    <div class="d-flex">
+                                        <button class="btn btn-sm btn-outline-primary mr-2">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-white text-right">
+                    <a href="#" class="btn btn-primary">Voir tous mes favoris</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .list-group-item.active {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .table th {
+        border-top: none;
+    }
+
+    .badge {
+        font-weight: normal;
+        padding: 0.35em 0.65em;
+    }
+</style>

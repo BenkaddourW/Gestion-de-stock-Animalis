@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "jG4iCUX9Kfyya4+ynIDx2TKEo4QEOColn9oUUSyKXhA=",
+  "Source": "StoreAPIServer",
+  "BasePath": "_content/StoreAPIServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

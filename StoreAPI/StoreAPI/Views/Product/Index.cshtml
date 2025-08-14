@@ -1,0 +1,180 @@
+﻿@model List<StoreAPI.Models.DTO.ProduitDto>
+@{
+}
+@{
+    ViewData["Title"] = "Nos Produits - Animalis";
+}
+
+<div class="container my-5">
+    <!-- En-tête -->
+    <div class="text-center mb-5">
+        <h1 class="display-4"><i class="fas fa-bone text-primary"></i> Nos Produits</h1>
+        <p class="lead">Découvrez notre sélection premium pour le bien-être de vos animaux</p>
+    </div>
+
+
+    <!-- Filtres et recherche -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
+            <form asp-controller="Product" asp-action="Index" method="get" id="filterForm">
+                <div class="row align-items-end g-3">
+                    <!-- Barre de recherche (4 colonnes) -->
+                    <div class="col-md-4">
+                        <label class="small fw-bold mb-1">Recherche</label>
+                        <div class="input-group input-group-sm">
+                            <input type="text"
+                                   class="form-control"
+                                   name="search"
+                                   placeholder="Nom ou description..."
+                                   value="@Context.Request.Query["search"]">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Filtres (8 colonnes) -->
+                    <div class="col-md-8">
+                        <div class="row g-2 align-items-end">
+                            <!-- Filtre Catégorie -->
+                            <div class="col-md">
+                                <label class="small fw-bold mb-1">Catégorie</label>
+                                <select class="form-select form-select-sm" name="category" onchange="this.form.submit()">
+                                    <option value="">Toutes</option>
+                                    @foreach (var categorie in ViewBag.Categories)
+                                    {
+                                        <option value="@categorie" selected="@(Context.Request.Query["category"] == categorie)">
+                                            @categorie
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+
+                            <!-- Filtre Type d'animal -->
+                            <div class="col-md">
+                                <label class="small fw-bold mb-1">Animal</label>
+                                <select class="form-select form-select-sm" name="animalType" onchange="this.form.submit()">
+                                    <option value="">Tous</option>
+                                    @foreach (var type in ViewBag.AnimalTypes)
+                                    {
+                                        <option value="@type" selected="@(Context.Request.Query["animalType"] == type)">
+                                            @type
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+
+                            <!-- Bouton de réinitialisation -->
+                            <div class="col-md-auto">
+                                <a href="@Url.Action("Index")" class="btn btn-sm btn-outline-secondary" title="Réinitialiser">
+                                    <i class="fas fa-undo"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Produits -->
+   <div class="row">
+        <!-- REMPLACEMENT : Les 4 produits statiques ont été remplacés par une boucle foreach -->
+        @foreach (var produit in Model) 
+        {
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100 product-card">
+                    <!-- AJOUT : Condition pour afficher un badge promo -->
+                    @if (produit.Prix < 20)
+                    {
+                        <span class="badge badge-danger badge-promo">Promo</span>
+                    }
+                    
+                    <!-- MODIFICATION : L'image utilise maintenant le nom du produit -->
+                   
+                    <img src="https://localhost:7254/api/Produits/image/@produit.IdProduit"
+                         onerror="console.error('Erreur image:', this.src)" />
+                    
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <!-- MODIFICATION : Le titre utilise maintenant le Nom du produit -->
+                            <h5 class="card-title">@produit.Nom</h5>
+                            <button class="btn btn-sm btn-outline-secondary"><i class="far fa-heart"></i></button>
+                        </div>
+                        <!-- MODIFICATION : La description utilise maintenant Description du produit -->
+                        <p class="card-text text-muted small">@produit.Description</p>
+                        
+                        <!-- Rating (inchangé) -->
+                        <div class="rating mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                            <span class="small text-muted ml-1">(42)</span>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- MODIFICATION : Le prix utilise maintenant Prix du produit avec formatage monétaire -->
+                            <span class="h5 text-primary">@produit.Prix.ToString("C")</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Bouton "Ajouter au panier" (inchangé) -->
+                    <div class="card-footer bg-white border-0">
+                        <button class="btn btn-primary btn-block">
+                            <i class="fas fa-cart-plus mr-2"></i>Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation" class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Suivant</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<style>
+    .product-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+    .badge-promo {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .badge-new {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        background-color: #28a745;
+    }
+
+    .rating {
+        font-size: 0.9rem;
+    }
+</style>

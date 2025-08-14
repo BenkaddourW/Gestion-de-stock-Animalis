@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Accueil - Animalis";
+}
+
+<div class="jumbotron bg-light rounded-3" style="background-image: url('https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; min-height: 400px;">
+    <div class="text-white text-center py-5 px-4" style="background-color: rgba(0,0,0,0.5); border-radius: 0.3rem;">
+        <h1 class="display-4"><i class="fas fa-paw"></i> Bienvenue chez Animalis</h1>
+        <p class="lead">Tout ce dont votre animal a besoin pour être heureux et en bonne santé</p>
+        <a class="btn btn-primary btn-lg mt-3" asp-controller="Product" asp-action="Index" role="button">Découvrir nos produits</a>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+                <i class="fas fa-dog fa-3x text-primary mb-3"></i>
+                <h2>Pour les chiens</h2>
+                <p>Nourriture, jouets, accessoires et soins pour votre fidèle compagnon.</p>
+                <a class="btn btn-outline-primary" asp-controller="Product" asp-action="Index" asp-route-animalType="Chien">Voir les produits &raquo;</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+                <i class="fas fa-cat fa-3x text-primary mb-3"></i>
+                <h2>Pour les chats</h2>
+                <p>Alimentation, litières, arbres à chat et tout pour le bien-être de votre félin.</p>
+                <a class="btn btn-outline-primary" asp-controller="Product" asp-action="Index" asp-route-animalType="Chat">Voir les produits &raquo;</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+                <i class="fas fa-dove fa-3x text-primary mb-3"></i>
+                <h2>Pour les oiseaux</h2>
+                <p>Cages, nourriture spécialisée et accessoires pour vos compagnons à plumes.</p>
+                <a class="btn btn-outline-primary" asp-controller="Product" asp-action="Index" asp-route-category="Oiseau">Voir les produits &raquo;</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+            <div class="card-body">
+                <h2 class="text-center"><i class="fas fa-truck"></i> Livraison rapide</h2>
+                <p>Commandez avant 14h et recevez vos produits le lendemain. Livraison offerte dès 49€ d'achat.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+            <div class="card-body">
+                <h2 class="text-center"><i class="fas fa-hand-holding-heart"></i> Engagement qualité</h2>
+                <p>Nous sélectionnons rigoureusement nos produits pour garantir le meilleur à vos animaux.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toggle-password {
+        cursor: pointer;
+    }
+
+    .form-control {
+        height: calc(1.5em + 1rem + 2px);
+    }
+</style>

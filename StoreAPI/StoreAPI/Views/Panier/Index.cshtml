@@ -1,0 +1,265 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Mon Panier - Animalis";
+}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- En-tête du panier -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="mb-0">
+                    <i class="fas fa-shopping-cart text-primary"></i> Mon panier
+                </h2>
+                <span class="badge badge-primary badge-pill">3 articles</span>
+            </div>
+
+            <!-- Liste des produits -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <!-- Produit 1 -->
+                    <div class="row align-items-center py-3 border-bottom">
+                        <div class="col-3 col-md-2">
+                            <img src="https://via.placeholder.com/100?text=Croquettes+Chien" class="img-fluid rounded" alt="Croquettes Premium Chien">
+                        </div>
+                        <div class="col-5 col-md-6">
+                            <h5 class="mb-1">Croquettes Premium Chien</h5>
+                            <p class="small text-muted mb-1">Sac de 15kg - Saveur saumon</p>
+                            <p class="mb-0 text-success">
+                                <i class="fas fa-check-circle"></i> En stock
+                            </p>
+                        </div>
+                        <div class="col-4 col-md-4">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div class="input-group input-group-sm mr-3" style="width: 100px;">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                                    </div>
+                                    <input type="number" class="form-control text-center quantity" value="1" min="1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                                    </div>
+                                </div>
+                                <div class="text-right ml-3" style="width: 80px;">
+                                    <span class="font-weight-bold">47,99€</span>
+                                    <button class="btn btn-link text-danger p-0 d-block small remove-btn">
+                                        <i class="fas fa-trash-alt"></i> Supprimer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produit 2 -->
+                    <div class="row align-items-center py-3 border-bottom">
+                        <div class="col-3 col-md-2">
+                            <img src="https://via.placeholder.com/100?text=Jouet+Chien" class="img-fluid rounded" alt="Jouet interactif">
+                        </div>
+                        <div class="col-5 col-md-6">
+                            <h5 class="mb-1">Jouet interactif pour chien</h5>
+                            <p class="small text-muted mb-1">Distributeur de friandises - Taille L</p>
+                            <p class="mb-0 text-success">
+                                <i class="fas fa-check-circle"></i> En stock
+                            </p>
+                        </div>
+                        <div class="col-4 col-md-4">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div class="input-group input-group-sm mr-3" style="width: 100px;">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                                    </div>
+                                    <input type="number" class="form-control text-center quantity" value="2" min="1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                                    </div>
+                                </div>
+                                <div class="text-right ml-3" style="width: 80px;">
+                                    <span class="font-weight-bold">49,98€</span>
+                                    <button class="btn btn-link text-danger p-0 d-block small remove-btn">
+                                        <i class="fas fa-trash-alt"></i> Supprimer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produit 3 -->
+                    <div class="row align-items-center py-3">
+                        <div class="col-3 col-md-2">
+                            <img src="https://via.placeholder.com/100?text=Arbre+Chat" class="img-fluid rounded" alt="Arbre à chat">
+                        </div>
+                        <div class="col-5 col-md-6">
+                            <h5 class="mb-1">Arbre à chat Luxe</h5>
+                            <p class="small text-muted mb-1">180cm - 3 plateformes - Sisal</p>
+                            <p class="mb-0 text-warning">
+                                <i class="fas fa-exclamation-circle"></i> Livraison sous 3-5 jours
+                            </p>
+                        </div>
+                        <div class="col-4 col-md-4">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div class="input-group input-group-sm mr-3" style="width: 100px;">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                                    </div>
+                                    <input type="number" class="form-control text-center quantity" value="1" min="1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                                    </div>
+                                </div>
+                                <div class="text-right ml-3" style="width: 80px;">
+                                    <span class="font-weight-bold">129,99€</span>
+                                    <button class="btn btn-link text-danger p-0 d-block small remove-btn">
+                                        <i class="fas fa-trash-alt"></i> Supprimer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code promo -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-tag text-primary"></i> Code promo</h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Entrez votre code promo">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">Appliquer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons de navigation -->
+            <div class="d-flex justify-content-between">
+                <a href="#" class="btn btn-outline-primary">
+                    <i class="fas fa-chevron-left mr-2"></i> Continuer mes achats
+                </a>
+                <button class="btn btn-outline-danger" id="clear-cart">
+                    <i class="fas fa-trash-alt mr-2"></i> Vider le panier
+                </button>
+            </div>
+        </div>
+
+        <!-- Récapitulatif de commande -->
+        <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="card border-0 shadow-sm sticky-top" style="top: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title mb-4"><i class="fas fa-receipt text-primary"></i> Récapitulatif</h5>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Sous-total (3 articles)</span>
+                        <span>227,96€</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Livraison</span>
+                        <span class="text-success">Gratuite</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Code promo</span>
+                        <span>-10,00€</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="font-weight-bold">Total TTC</span>
+                        <span class="font-weight-bold">217,96€</span>
+                    </div>
+
+                    <button class="btn btn-primary btn-lg btn-block mb-3">
+                        <i class="fas fa-credit-card mr-2"></i> Passer la commande
+                    </button>
+
+                    <div class="text-center">
+                        <img src="https://via.placeholder.com/200x30?text=PAYMENT+OPTIONS" class="img-fluid" alt="Moyens de paiement">
+                        <p class="small text-muted mt-2">
+                            Paiement sécurisé - Vos données sont protégées
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .quantity {
+        -moz-appearance: textfield;
+    }
+
+        .quantity::-webkit-outer-spin-button,
+        .quantity::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+    .badge-pill {
+        font-size: 0.8rem;
+        padding: 0.5em 0.8em;
+    }
+
+    .sticky-top {
+        z-index: 1;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        // Gestion des quantités
+        document.querySelectorAll('.plus-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.closest('.input-group').querySelector('.quantity');
+                input.value = parseInt(input.value) + 1;
+                updateCart();
+            });
+        });
+
+        document.querySelectorAll('.minus-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.closest('.input-group').querySelector('.quantity');
+                if (parseInt(input.value) > 1) {
+                    input.value = parseInt(input.value) - 1;
+                    updateCart();
+                }
+            });
+        });
+
+        document.querySelectorAll('.quantity').forEach(input => {
+            input.addEventListener('change', function() {
+                if (parseInt(this.value) < 1) this.value = 1;
+                updateCart();
+            });
+        });
+
+        // Suppression d'articles
+        document.querySelectorAll('.remove-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.row').remove();
+                updateCart();
+            });
+        });
+
+        // Vider le panier
+        document.getElementById('clear-cart').addEventListener('click', function() {
+            if (confirm('Êtes-vous sûr de vouloir vider votre panier ?')) {
+                document.querySelectorAll('.card-body .row').forEach(row => row.remove());
+                updateCart();
+            }
+        });
+
+        // Fonction pour mettre à jour le panier (simplifiée)
+        function updateCart() {
+            // Ici, vous devriez implémenter la logique pour :
+            // 1. Calculer le nouveau sous-total
+            // 2. Mettre à jour le nombre d'articles
+            // 3. Actualiser les totaux dans le récapitulatif
+            console.log('Panier mis à jour');
+        }
+    </script>
+}

@@ -1,0 +1,102 @@
+﻿@model StoreAPI.Models.DTO.ProduitDto
+@{
+    ViewData["Title"] = "Modifier un produit";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark fw-bold">
+            <i class="fas fa-pen me-2"></i> @ViewData["Title"]
+        </div>
+
+        <div class="card-body">
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-check-circle me-2"></i>@TempData["Success"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+                </div>
+            }
+
+            <form asp-action="Edit" asp-controller="Admin" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="IdProduit" class="form-label">ID Produit</label>
+                        <input asp-for="IdProduit" class="form-control" readonly />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Nom" class="form-label">Nom</label>
+                        <input asp-for="Nom" class="form-control" />
+                        <span asp-validation-for="Nom" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Description</label>
+                    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="AnimalType" class="form-label">Type d'animal</label>
+                        <select asp-for="AnimalType" class="form-select" asp-items="new SelectList(ViewBag.AnimalTypes)">
+                            <option value="">-- Sélectionner un type d'animal --</option>
+                        </select>
+                        <span asp-validation-for="AnimalType" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Categorie" class="form-label">Catégorie</label>
+                        <select asp-for="Categorie" class="form-select" asp-items="new SelectList(ViewBag.Categories)">
+                            <option value="">-- Sélectionner une catégorie --</option>
+                        </select>
+                        <span asp-validation-for="Categorie" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Prix" class="form-label">Prix ($)</label>
+                        <input asp-for="Prix" class="form-control" type="number" step="0.01" />
+                        <span asp-validation-for="Prix" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Quantite" class="form-label">Quantité</label>
+                        <input asp-for="Quantite" class="form-control" type="number" />
+                        <span asp-validation-for="Quantite" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Image actuelle</label><br />
+                    <img src="https://localhost:7254/api/Produits/image/@Model.IdProduit"
+                         class="img-thumbnail mb-2"
+                         style="max-width: 150px; max-height: 150px; object-fit: cover;"
+                         onerror="this.onerror=null; this.src='/images/produits/default.jpg';" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="ImageFile" class="form-label">Changer l'image</label>
+                    <input type="file" name="ImageFile" class="form-control" accept="image/*" />
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="submit" class="btn btn-warning text-dark fw-bold">
+                        <i class="fas fa-save"></i> Enregistrer
+                    </button>
+                    <a asp-action="Index" asp-controller="Admin" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Retour
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\benka\\source\\repos\\StoreAPIServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9F9E4112-0BFA-49BB-BA78-8490332445FD}|StoreAPIServer\\StoreAPIServer.csproj|c:\\users\\benka\\source\\repos\\storeapiserver\\storeapiserver\\controllers\\produitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F9E4112-0BFA-49BB-BA78-8490332445FD}|StoreAPIServer\\StoreAPIServer.csproj|solutionrelative:storeapiserver\\controllers\\produitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F9E4112-0BFA-49BB-BA78-8490332445FD}|StoreAPIServer\\StoreAPIServer.csproj|c:\\users\\benka\\source\\repos\\storeapiserver\\storeapiserver\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F9E4112-0BFA-49BB-BA78-8490332445FD}|StoreAPIServer\\StoreAPIServer.csproj|solutionrelative:storeapiserver\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\benka\\source\\repos\\StoreAPIServer\\StoreAPIServer\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "StoreAPIServer\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\benka\\source\\repos\\StoreAPIServer\\StoreAPIServer\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "StoreAPIServer\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA3wBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T20:47:19.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProduitsController.cs",
+              "DocumentMoniker": "C:\\Users\\benka\\source\\repos\\StoreAPIServer\\StoreAPIServer\\Controllers\\ProduitsController.cs",
+              "RelativeDocumentMoniker": "StoreAPIServer\\Controllers\\ProduitsController.cs",
+              "ToolTip": "C:\\Users\\benka\\source\\repos\\StoreAPIServer\\StoreAPIServer\\Controllers\\ProduitsController.cs",
+              "RelativeToolTip": "StoreAPIServer\\Controllers\\ProduitsController.cs",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAqwLsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T20:42:14.006Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

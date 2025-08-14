@@ -1,0 +1,107 @@
+﻿@model StoreAPI.Models.DTO.UtilisateurDto
+
+@{
+    ViewData["Title"] = "Inscription - Animalis";
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card border-0 shadow-lg">
+                <div class="card-body p-5">
+                    <!-- Logo et titre -->
+                    <div class="text-center mb-4">
+                        <h1 class="h3">
+                            <i class="fas fa-paw text-primary"></i> Animalis
+                        </h1>
+                        <p class="text-muted">Créez votre compte</p>
+                    </div>
+                    <!-- Affichage des erreurs -->
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger">
+                            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                            {
+                                <p class="mb-1"><i class="fas fa-exclamation-circle mr-2"></i>@error.ErrorMessage</p>
+                            }
+                        </div>
+                    }
+                    <!-- Formulaire d'inscription -->
+                    <form asp-action="Index" method="post" novalidate>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label asp-for="Prenom">Prénom*</label>
+                                <input asp-for="Prenom" class="form-control" placeholder="Votre prénom" />
+                                <span asp-validation-for="Prenom" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label asp-for="Nom">Nom*</label>
+                                <input asp-for="Nom" class="form-control" placeholder="Votre nom" />
+                                <span asp-validation-for="Nom" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Email">Email*</label>
+                            <input asp-for="Email" class="form-control" type="email" placeholder="exemple@email.com" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Telephone">Téléphone*</label>
+                            <input asp-for="Telephone" class="form-control" placeholder="0123456789" />
+                            <span asp-validation-for="Telephone" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password">Mot de passe*</label>
+                            <input asp-for="Password" class="form-control" type="password" placeholder="Au moins 8 caractères" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword">Confirmation du mot de passe*</label>
+                            <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Répétez votre mot de passe" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg mt-3">
+                            <i class="fas fa-user-plus mr-2"></i> S'inscrire
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Lien vers la connexion -->
+                <div class="card-footer bg-white text-center py-3">
+                    <p class="mb-0">Vous avez déjà un compte ? <a asp-area="" asp-controller="Login" asp-action="Index" class="font-weight-bold">Se connecter</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .form-control {
+        height: calc(1.5em + 1rem + 2px);
+        padding: 0.5rem 0.75rem;
+    }
+
+    .form-check-label a {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+
+    .text-danger {
+        font-size: 0.875rem;
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

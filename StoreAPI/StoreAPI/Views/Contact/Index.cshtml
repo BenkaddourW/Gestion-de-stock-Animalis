@@ -1,0 +1,101 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Contact - Animalis";
+}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="text-center mb-5">
+                <h1 class="display-4"><i class="fas fa-paw text-primary"></i> Contactez-nous</h1>
+                <p class="lead">Nous sommes là pour répondre à toutes vos questions sur nos produits pour animaux</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-map-marker-alt text-primary"></i> Notre adresse</h3>
+                            <address class="mt-3">
+                                <strong>Animalis</strong><br>
+                                123 Rue des Animaux<br>
+                                75000 Paris, France<br>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-phone-alt text-primary"></i> Nous contacter</h3>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="fas fa-phone mr-2"></i> <a href="tel:+33123456789">01 23 45 67 89</a></li>
+                                <li><i class="fas fa-envelope mr-2"></i> <a href="mailto:contact@animalis.com">contact@animalis.com</a></li>
+                                <li><i class="fas fa-clock mr-2"></i> Lundi-Vendredi: 9h-19h</li>
+                                <li><i class="fas fa-clock mr-2"></i> Samedi: 10h-18h</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-body p-4">
+                    <h3 class="mb-4"><i class="fas fa-paper-plane text-primary"></i> Formulaire de contact</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="firstName">Prénom</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lastName">Nom</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone (optionnel)</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <select class="form-control" id="subject">
+                                <option>Question sur un produit</option>
+                                <option>Suivi de commande</option>
+                                <option>Problème technique</option>
+                                <option>Retour produit</option>
+                                <option>Autre demande</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane mr-2"></i> Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-body">
+                    <h3><i class="fas fa-map-marked-alt text-primary"></i> Nous trouver</h3>
+                    <div class="embed-responsive embed-responsive-16by9 mt-3">
+                        <iframe class="embed-responsive-item rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.99144060821!2d2.292292615853889!3d48.85837360866178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1623940260430!5m2!1sfr!2sfr"
+                                allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
